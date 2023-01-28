@@ -1,9 +1,8 @@
-
-def calculadora():
+def calculator():
     while True:
-        num1 = float(input("Ingresa el primer número: "))
-        operacion = input("Ingresa la operación a realizar (+, -, *, /): ")
-        num2 = float(input("Ingresa el segundo número: "))
+        num1 = float(input("Enter the first number: "))
+        operacion = input("Enter the operation to make (+, -, *, /): ")
+        num2 = float(input("Enter the second number: "))
 
         if operacion == "+":
             resultado = num1 + num2
@@ -14,11 +13,11 @@ def calculadora():
         elif operacion == "/":
             resultado = num1 / num2
         else:
-            print("Operación no válida")
+            print("Operation is not valid")
             continue
-        print("El resultado es: ", resultado)
-        continuar = input("Desea realizar otra operación (s/n)?: ").lower()
+        print("The result is: ", resultado)
+        continuar = input("Do you want to carry out another operation (s/n)?: ").lower()
         if continuar == "n":
             break
 
-calculadora()
+calculator()

@@ -100,4 +100,45 @@ task_list.pack()
 
 root.mainloop()
 
+```
 
+## Basic Calculator
+
+*1.* I created a main function called calculator that contains a while loop so that the user can continue to perform mathematical operations as long as they wish.
+
+*2.* Inside the loop, I use the input() function to ask the user to enter two numbers and the type of mathematical operation they want to perform (+, -, *, /).
+
+*3.* I use an if-elif-else control structure to determine which mathematical operation to perform with the numbers entered.
+
+*4.* Perform the corresponding mathematical operation using the Python arithmetic operators (+, -, *, /).
+
+*5.* Use the print() function to display the result of the operation to the user.
+
+*6.* Inside the while, I added a question if the user wants to continue with another operation and if not, it ends the program.
+
+```python
+def calculator():
+    while True:
+        num1 = float(input("Enter the first number: "))
+        operacion = input("Enter the operation to make (+, -, *, /): ")
+        num2 = float(input("Enter the second number: "))
+
+        if operacion == "+":
+            resultado = num1 + num2
+        elif operacion == "-":
+            resultado = num1 - num2
+        elif operacion == "*":
+            resultado = num1 * num2
+        elif operacion == "/":
+            resultado = num1 / num2
+        else:
+            print("Operation is not valid")
+            continue
+        print("The result is: ", resultado)
+        continuar = input("Do you want to carry out another operation (s/n)?: ").lower()
+        if continuar == "n":
+            break
+
+calculator()
+
+```
