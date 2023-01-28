@@ -33,3 +33,71 @@ while guess != answer:
         print("El número es menor")
     else:
         print("Bien hecho! Adivinaste el número {} intentos.".format(tries))
+        
+```
+
+## Task List
+
+*1.* Start by importing the Tkinter library.
+
+*2.* Create a main window using the Tk() class.
+
+*3.* Use the Label class to create labels to describe the application.
+
+*4*. Use the Entry class to create an input field where the user can enter a new task.
+
+*5.* Use the Button class to create buttons to add, delete, and update tasks.
+
+*6.* Use the Listbox class to create a drop-down list where the tasks will be displayed.
+
+*7.* Use a text file or a database to store the tasks entered by the user.
+
+*8.* Create functions to add, delete, and update tasks, associated with the corresponding buttons.
+
+*9.* Use a while loop to keep the window open while the user uses the application.
+
+
+```python
+
+import tkinter as tk
+
+def add_task():
+    task = task_input.get()
+    tasks.append(task)
+    task_input.delete(0, "end")
+    update_task_list()
+
+def update_task_list():
+    clear_task_list()
+    for task in tasks:
+        task_list.insert("end", task)
+
+def clear_task_list():
+    task_list.delete(0, "end")
+
+root = tk.Tk()
+root.title("Lista de Tareas")
+
+tasks = []
+
+task_label = tk.Label(root, text="Ingresa una nueva tarea:")
+task_label.pack()
+
+task_input = tk.Entry(root)
+task_input.pack()
+
+add_button = tk.Button(root, text="Agregar", command=add_task)
+add_button.pack()
+
+add_button = tk.Button(root, text="Tarea completada", command=update_task_list)
+add_button.pack()
+
+add_button = tk.Button(root, text="Borrar Lista", command=clear_task_list)
+add_button.pack()
+
+task_list = tk.Listbox(root)
+task_list.pack()
+
+root.mainloop()
+
+
